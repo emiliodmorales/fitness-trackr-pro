@@ -2,7 +2,9 @@ import { useNavigate, useParams } from "react-router";
 import { deleteRoutine, getRoutines } from "../api/routines";
 import { useEffect, useState } from "react";
 import { useAuth } from "../auth/AuthContext";
-import SetForm from "./SetForm";
+import SetForm from "../sets/SetForm";
+import { deleteSet } from "../api/sets";
+import SetItem from "../sets/SetItem";
 
 export default function RoutineDetails() {
   const { id } = useParams();
@@ -44,7 +46,16 @@ export default function RoutineDetails() {
       {routine.sets?.length > 0 ? (
         <>
           <h3>Sets</h3>
-          <ul>{routine.sets.map(SetItem)}</ul>
+          <ul>
+            {routine.sets.map((set) => (
+              <SetItem
+                key={set.id}
+                set={set}
+                setError={setError}
+                syncDetails={syncDetails}
+              />
+            ))}
+          </ul>
         </>
       ) : (
         <p>Add sets below</p>
@@ -53,13 +64,5 @@ export default function RoutineDetails() {
       {error && <p role="alert">{error}</p>}
       {token && <SetForm syncDetails={syncDetails} routineId={routine.id} />}
     </>
-  );
-}
-
-function SetItem(activity) {
-  return (
-    <li>
-      {activity.name} x{activity.count}
-    </li>
   );
 }
