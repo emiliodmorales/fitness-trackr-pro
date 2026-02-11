@@ -12,15 +12,13 @@ import Layout from "./layout/Layout.jsx";
  */
 export default function App() {
   return (
-    <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route index element={<ActivitiesPage />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route path="*" element={<Error404 />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<ActivitiesPage />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route path="*" element={<Error404 />} />
+      </Route>
+    </Routes>
   );
 }

@@ -3,9 +3,12 @@ import "./index.css";
 import App from "./App.jsx";
 
 import { AuthProvider } from "./auth/AuthContext";
+import { BrowserRouter } from "react-router";
 
 createRoot(document.getElementById("root")).render(
   <AuthProvider>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </AuthProvider>,
 );
