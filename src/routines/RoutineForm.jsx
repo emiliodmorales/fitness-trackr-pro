@@ -12,10 +12,10 @@ export default function RoutineForm({ syncRoutines }) {
     setError(null);
 
     const name = formData.get("name");
-    const description = formData.get("description");
+    const goal = formData.get("goal");
 
     try {
-      await createRoutine(token, { name, description });
+      await createRoutine(token, { name, goal });
       syncRoutines();
     } catch (e) {
       setError(e.message);
@@ -31,8 +31,8 @@ export default function RoutineForm({ syncRoutines }) {
           <input type="text" name="name" />
         </label>
         <label>
-          Description
-          <input type="text" name="description" />
+          Goal
+          <input type="text" name="goal" />
         </label>
         <button>Add routine</button>
       </form>
