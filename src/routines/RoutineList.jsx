@@ -17,9 +17,9 @@ export default function RoutineList({ routines, syncRoutines }) {
 function RoutineListItem({ routine, syncRoutines }) {
   return (
     <li>
-      <Link to={"/routines/" + routine.id}>
-        <p>{routine.name}</p>
-      </Link>
+      <p>
+        <Link to={"/routines/" + routine.id}>{routine.name}</Link>
+      </p>
     </li>
   );
 }

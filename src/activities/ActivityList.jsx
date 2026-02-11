@@ -17,9 +17,9 @@ export default function ActivityList({ activities, syncActivities }) {
 function ActivityListItem({ activity, syncActivities }) {
   return (
     <li>
-      <Link to={"/activities/" + activity.id}>
-        <p>{activity.name}</p>
-      </Link>
+      <p>
+        <Link to={"/activities/" + activity.id}>{activity.name}</Link>
+      </p>
     </li>
   );
 }
