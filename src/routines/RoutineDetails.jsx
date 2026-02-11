@@ -43,20 +43,18 @@ export default function RoutineDetails() {
       <h2>{routine.name}</h2>
       <p>{routine.goal}</p>
       <p>Created by {routine.creatorName}</p>
+      <h3>Sets</h3>
       {routine.sets?.length > 0 ? (
-        <>
-          <h3>Sets</h3>
-          <ul>
-            {routine.sets.map((set) => (
-              <SetItem
-                key={set.id}
-                set={set}
-                setError={setError}
-                syncDetails={syncDetails}
-              />
-            ))}
-          </ul>
-        </>
+        <ul>
+          {routine.sets.map((set) => (
+            <SetItem
+              key={set.id}
+              set={set}
+              setError={setError}
+              syncDetails={syncDetails}
+            />
+          ))}
+        </ul>
       ) : (
         <p>Add sets below</p>
       )}
