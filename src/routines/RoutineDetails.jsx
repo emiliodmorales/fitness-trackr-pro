@@ -3,7 +3,6 @@ import { deleteRoutine, getRoutines } from "../api/routines";
 import { useEffect, useState } from "react";
 import { useAuth } from "../auth/AuthContext";
 import SetForm from "../sets/SetForm";
-import { deleteSet } from "../api/sets";
 import SetItem from "../sets/SetItem";
 
 export default function RoutineDetails() {
