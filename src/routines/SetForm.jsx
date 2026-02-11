@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../auth/AuthContext";
 import { getActivities } from "../api/activities";
+import { createSet } from "../api/sets";
 
 /** Form for a user to create a new routine with a name and description. */
 export default function SetForm({ syncDetails, routineId }) {
