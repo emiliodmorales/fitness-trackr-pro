@@ -30,6 +30,8 @@ export default function ActivityDetails() {
     }
   };
 
+  if (!activity) return <p>Loading...</p>;
+
   return (
     <>
       <h2>{activity.name}</h2>
