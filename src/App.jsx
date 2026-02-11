@@ -18,7 +18,10 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<ActivitiesPage />} />
-        <Route path="activities/:id" element={<ActivityDetails />} />
+        <Route path="activities">
+          <Route index element={<ActivitiesPage />} />
+          <Route path="activities/:id" element={<ActivityDetails />} />
+        </Route>
 
         <Route path="routines">
           <Route index element={<RoutinesPage />} />
