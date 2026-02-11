@@ -22,7 +22,7 @@ export default function App() {
 
         <Route path="routines">
           <Route index element={<RoutinesPage />} />
-          <Route path="routines/:id" element={<RoutineDetails />} />
+          <Route path=":id" element={<RoutineDetails />} />
         </Route>
 
         <Route path="login" element={<Login />} />
