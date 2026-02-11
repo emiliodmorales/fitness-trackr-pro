@@ -37,7 +37,6 @@ export default function ActivityDetails() {
       <p>Created by {activity.creatorName}</p>
       {token && <button onClick={tryDelete}>Delete</button>}
       {error && <p role="alert">{error}</p>}
-      <Link to="/">Back to activities</Link>
     </>
   );
 }
