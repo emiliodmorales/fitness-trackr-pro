@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { deleteRoutine, getRoutines } from "../api/routines";
 import { useEffect, useState } from "react";
 import { useAuth } from "../auth/AuthContext";
@@ -47,7 +47,7 @@ export default function RoutineDetails() {
           <ul>{routine.sets.map(SetItem)}</ul>
         </>
       ) : (
-        <p>Add sets</p>
+        <p>Add sets below</p>
       )}
       {token && <button onClick={tryDelete}>Delete Routine</button>}
       {error && <p role="alert">{error}</p>}
@@ -58,8 +58,8 @@ export default function RoutineDetails() {
 
 function SetItem(activity) {
   return (
-    <p>
+    <li>
       {activity.name} x{activity.count}
-    </p>
+    </li>
   );
 }
