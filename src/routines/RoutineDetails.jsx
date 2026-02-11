@@ -55,7 +55,7 @@ export default function RoutineDetails() {
           ))}
         </ul>
       ) : (
-        <p>Add sets below</p>
+        <p>{token ? "Add sets below" : "Login to add sets"}</p>
       )}
       {token && <button onClick={tryDelete}>Delete Routine</button>}
       {error && <p role="alert">{error}</p>}
