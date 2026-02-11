@@ -5,6 +5,7 @@ import { useAuth } from "../auth/AuthContext";
 /** Form for a user to create a new activity with a name and description. */
 export default function ActivityForm({ syncActivities }) {
   const { token } = useAuth();
+  if (!token) return;
 
   const [error, setError] = useState(null);
 
