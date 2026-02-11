@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import { useAuth } from "../auth/AuthContext";
 
 /** Navbar with site navigation links */
@@ -7,13 +8,13 @@ export default function Navbar() {
     <header>
       <p>Fitness Trackr</p>
       <nav>
-        <a onClick={() => {}}>Activities</a>
+        <NavLink to="/">Activities</NavLink>
         {token ? (
           <a onClick={() => logout()}>Log out</a>
         ) : (
           <>
-            <a onClick={() => {}}>Register</a>
-            <a onClick={() => {}}>Login</a>
+            <NavLink to="/register">Register</NavLink>
+            <NavLink to="login">Login</NavLink>
           </>
         )}
       </nav>
