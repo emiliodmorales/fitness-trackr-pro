@@ -20,7 +20,7 @@ export default function App() {
         <Route index element={<ActivitiesPage />} />
         <Route path="activities">
           <Route index element={<ActivitiesPage />} />
-          <Route path="activities/:id" element={<ActivityDetails />} />
+          <Route path=":id" element={<ActivityDetails />} />
         </Route>
 
         <Route path="routines">
