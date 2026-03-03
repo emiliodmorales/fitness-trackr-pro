@@ -18,6 +18,4 @@ Canvas with its own rubric.
 
 ## Submission
 
-Please submit the link to your public GitHub repository **for both workshops**!
-
-You may submit the same link twice.
+Deployed with [Netlify](https://emorales-fitness-trackr.netlify.app/)
